@@ -1,0 +1,78 @@
+<mxfile host="app.diagrams.net" modified="2023-07-24T20:16:33.303Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="WLCvj9y4v64F_DQ5TopW" version="21.6.5" type="device">
+  <diagram name="Página-1" id="k3VbwZViJ2QgE5hNcBTO">
+    <mxGraphModel dx="500" dy="258" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-1" value="&lt;div&gt;﻿A empresa MicroManu possui uma grande quantidade de clientes que leva seus equipamentos&amp;nbsp;&lt;/div&gt;&lt;div&gt;como computadores, celulares, video games e até tvs para que seus colaboradores realizem o conserto.&lt;/div&gt;&lt;div&gt;E eles querem que você desenvolva a base para armazenar todos os dados de seus clientes e seus respectivos consertos.&lt;/div&gt;&lt;div&gt;Para isto, desenvolva a modelagem para atender a demanda acima. Levando em conta o exemplo abaixo:&lt;/div&gt;&lt;div&gt;O cliente A levou seu computador na MicroManu, o Erik e o Claudio realizaram a manutenção deste item.&lt;/div&gt;&lt;div&gt;O cliente B levou sua tv na MicroManu e o Daniel realizou a limpeza de todas as peças.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;O cliente pode verificar seus consertos no site da MicroManu.&lt;/div&gt;&lt;div&gt;O colaborador pode encerrar o conserto.&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="160" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="RlS-FeVeSQCqCV9kVG_T-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-2" value="MicroManu" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="320" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-4" value="Possui" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="380" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="RlS-FeVeSQCqCV9kVG_T-5" target="RlS-FeVeSQCqCV9kVG_T-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-5" value="Cliente" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="440" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-6" value="N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="404" y="360" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-7" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="404" y="420" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="RlS-FeVeSQCqCV9kVG_T-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="RlS-FeVeSQCqCV9kVG_T-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-11" value="Especialistas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="500" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-16" value="N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="505" y="540" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-18" value="Nome" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="500" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-19" value="Possui" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="500" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-20" value="Eletrônico" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="560" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-22" value="N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="404" y="480" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-23" value="N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="404" y="540" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="RlS-FeVeSQCqCV9kVG_T-25">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="580.0952380952381" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-25" value="N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="560" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RlS-FeVeSQCqCV9kVG_T-28" value="Conserta" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="560" width="80" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
