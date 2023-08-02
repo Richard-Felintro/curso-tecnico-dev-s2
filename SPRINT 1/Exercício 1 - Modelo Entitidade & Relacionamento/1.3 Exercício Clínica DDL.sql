@@ -1,4 +1,5 @@
 --DDL Data Definition Language
+-- Cada atendimento deve registrar qual veterinário atendeu, qual pet foi atendido, descrição da consulta e data da consulta
 
 CREATE DATABASE Exercicio_1_3
 
@@ -46,9 +47,13 @@ CREATE TABLE Pet
 	DataNascimento DATE NOT NULL
 )
 
+DROP TABLE Atendimento
+
 CREATE TABLE Atendimento
 (
 	IdAtendimento INT PRIMARY KEY IDENTITY,
 	IdPet INT FOREIGN KEY REFERENCES Pet(IdPet),
-	IdVeterinario INT FOREIGN KEY REFERENCES Veterinario(IdVeterinario)
+	IdVeterinario INT FOREIGN KEY REFERENCES Veterinario(IdVeterinario),
+	DataConsulta DATE,
+	Descricao VARCHAR(64)
 )
