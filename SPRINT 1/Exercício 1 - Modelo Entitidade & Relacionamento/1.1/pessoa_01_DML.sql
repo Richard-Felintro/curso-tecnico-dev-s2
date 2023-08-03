@@ -1,4 +1,4 @@
---DML DATA MANIPULATION LANGUAGE
+-- DML - Data Manipulation Language
 
 USE Exercicio_1_1
 
