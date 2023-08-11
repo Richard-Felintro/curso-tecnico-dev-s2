@@ -1,5 +1,9 @@
 -- DQL - Data Query Language
 
+/* Listar todos os pedidos de um cliente (nome), 
+ mostrando quais produtos foram solicitados (titulo) neste pedido
+ e de qual subcategoria (nome) e categoria (nome) pertencem */
+
 USE Exercicio_1_5
 
 SELECT

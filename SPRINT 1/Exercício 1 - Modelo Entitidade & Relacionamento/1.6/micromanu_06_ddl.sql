@@ -1,0 +1,43 @@
+-- DDL - Data Definition Language
+CREATE DATABASE Exercicio_1_6
+USE Exercicio_1_6
+
+CREATE TABLE Empresa
+(
+	IdEmpresa INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(64) NOT NULL
+)
+
+CREATE TABLE Especialista
+(
+	IdEspecialista INT PRIMARY KEY IDENTITY,
+	IdEmpresa INT FOREIGN KEY REFERENCES Empresa(IdEmpresa),
+	Nome VARCHAR(64) NOT NULL
+)
+
+CREATE TABLE Tipo
+(
+	IdTipo INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(64) NOT NULL
+)
+
+CREATE TABLE Cliente
+(
+	IdCliente INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(64) NOT NULL
+)
+
+CREATE TABLE Eletronico
+(
+	IdEletronico INT PRIMARY KEY IDENTITY,
+	IdCliente INT FOREIGN KEY REFERENCES Cliente(IdCliente),
+	IdTipo INT FOREIGN KEY REFERENCES Tipo(IdTipo)
+)
+
+CREATE TABLE Conserto
+(
+	IdConserto INT PRIMARY KEY IDENTITY,
+	IdEspecialista INT FOREIGN KEY REFERENCES Especialista(IdEspecialista),
+	IdEletronico INT FOREIGN KEY REFERENCES Eletronico(IdEletronico),
+	EmProgresso BIT NOT NULL
+) 
