@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\wedapi.filmes.tarde.props" />
+</Project>
