@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
+using System.Reflection.Metadata.Ecma335;
 using wedapi.filmes.tarde.Domains;
 using wedapi.filmes.tarde.Interfaces;
 
@@ -17,9 +19,30 @@ namespace wedapi.filmes.tarde.Repositories
             throw new NotImplementedException();
         }
 
-        public GeneroDomain BuscarPorId(int id)
+        public GeneroDomain BuscarPorId(int idGenero)
         {
-            throw new NotImplementedException();
+            GeneroDomain genero = new GeneroDomain();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "Select * From Genero Where IdGenero = @idGenero";
+                cmd.Parameters.Add("@IdGenero", (SqlDbType)idGenero);
+                SqlDataReader Leitor;
+                Leitor = cmd.ExecuteReader();
+                while (Leitor.Read())
+                {
+
+                    {
+                        genero.IdGenero = Convert.ToInt32(Leitor[0]);
+                        genero.Nome = Convert.ToString(Leitor["Nome"]);
+                    }
+
+                }
+            }
+            return genero;
         }
 
         public void Cadastrar(GeneroDomain novoGenero)
