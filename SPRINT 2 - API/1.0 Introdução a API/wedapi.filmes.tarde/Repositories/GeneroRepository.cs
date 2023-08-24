@@ -19,35 +19,29 @@ namespace wedapi.filmes.tarde.Repositories
             throw new NotImplementedException();
         }
 
-        public GeneroDomain BuscarPorId(int idGenero)
-        {
-            GeneroDomain genero = new GeneroDomain();
-            using (SqlConnection con = new SqlConnection(StringConexao))
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                con.Open();
-                cmd.Connection = con;
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Select * From Genero Where IdGenero = @idGenero";
-                cmd.Parameters.Add("@IdGenero", (SqlDbType)idGenero);
-                SqlDataReader Leitor;
-                Leitor = cmd.ExecuteReader();
-                while (Leitor.Read())
-                {
-
-                    {
-                        genero.IdGenero = Convert.ToInt32(Leitor[0]);
-                        genero.Nome = Convert.ToString(Leitor["Nome"]);
-                    }
-
-                }
-            }
-            return genero;
-        }
-
-        public void Cadastrar(GeneroDomain novoGenero)
+        public GeneroDomain BuscarPorId(int id)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Cadastrar um novo objeto
+        /// </summary>
+        /// <param name="novoGenero">Objeto com as informações que serão cadastradas</param>
+        public void Cadastrar(GeneroDomain novoGenero)
+        {
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string queryInsert = "INSERT INTO Genero(Nome) VALUES (' " + novoGenero.Nome + " ')";
+                // Abre a conexão com o banco
+                con.Open();
+
+                // Declara o comando com seu conteúdo (queryInsert) e conexão (con)
+                using (SqlCommand cmd = new SqlCommand(queryInsert,con))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public void Deletar(int id)

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Resources;
 using wedapi.filmes.tarde.Domains;
 using wedapi.filmes.tarde.Interfaces;
 using wedapi.filmes.tarde.Repositories;
@@ -35,9 +36,24 @@ namespace wedapi.filmes.tarde.Controllers
         public GeneroController()
         { 
             _generoRepository = new GeneroRepository();
-        
         }
 
+        [HttpPost]
+        public IActionResult Post(GeneroDomain novoGenero)
+        {
+            try
+            {
+                //Faz a chamada do método para cadastrar
+                _generoRepository.Cadastrar(novoGenero);
+
+                //Retorna o status code
+                return Created("Objeto criado",novoGenero);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
 
         [HttpGet]
         public IActionResult Get()
@@ -45,10 +61,10 @@ namespace wedapi.filmes.tarde.Controllers
             try
             {
                 // Cria uma lista para receber os gêneros
-                _generoRepository.BuscarPorId(0);
+                List<GeneroDomain> ListaGeneros = _generoRepository.ListarTodos();
 
                 // Retorna o Status Code 200 e a lista de gêneros no formato JSON
-                return Ok();
+                return StatusCode(200, ListaGeneros);
             }
             catch (Exception erro)
             {
@@ -56,27 +72,5 @@ namespace wedapi.filmes.tarde.Controllers
                 return BadRequest(erro.Message);
             }
         }
-
-        /// <summary>
-        /// Endpoint que acessa o método de listar os gênero
-        /// </summary>
-        /// <returns>Lista de gêneros e um status code</returns>
-        //[HttpGet]
-        //public IActionResult Get()
-        //{
-        //    try
-        //    {
-        //        // Cria uma lista para receber os gêneros
-        //        List<GeneroDomain> ListaGeneros = _generoRepository.ListarTodos();
-
-        //        // Retorna o Status Code 200 e a lista de gêneros no formato JSON
-        //        return Ok(ListaGeneros);
-        //    }
-        //    catch (Exception erro)
-        //    {
-        //        // Retorna um status code 400 BadRequest e a mensagem de erro
-        //        return BadRequest(erro.Message);
-        //    }
-        //}
     }
 }
