@@ -4,6 +4,7 @@ using System.Resources;
 using wedapi.filmes.tarde.Domains;
 using wedapi.filmes.tarde.Interfaces;
 using wedapi.filmes.tarde.Repositories;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace wedapi.filmes.tarde.Controllers
 {
@@ -96,6 +97,10 @@ namespace wedapi.filmes.tarde.Controllers
             try
             {
                 GeneroDomain genero = _generoRepository.BuscarPorId(id);
+                if (genero == null)
+                {
+                    return BadRequest("Gênero não encontrado");
+                }
 
                 return StatusCode(200, genero);
             }
