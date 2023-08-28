@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>wedapi.filmes.tarde</name>
+    </assembly>
+    <members>
+        <member name="T:wedapi.filmes.tarde.Controllers.GeneroController">
+            <summary>
+            Define que a rota de uma requisição será no seguinte formato
+            dominio/api/nomeController
+            exemplo: http://localhost:5000/api/Genero
+            </summary>
+        </member>
+        <member name="P:wedapi.filmes.tarde.Controllers.GeneroController._generoRepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.GeneroController.#ctor">
+            <summary>
+            Instancia o _generoRepository para que haja referência aos membros do repositório
+            </summary>
+        </member>
+        <member name="T:wedapi.filmes.tarde.Domains.FilmeDomain">
+            <summary>
+            Classe representante da entidade Filme
+            </summary>
+        </member>
+        <member name="T:wedapi.filmes.tarde.Domains.GeneroDomain">
+            <summary>
+            Classe representante da entidade Genero
+            </summary>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IFilmeRepository.ListarTodos">
+            <summary>
+            Retornar todos os filmes cadastrados
+            </summary>
+            <returns>Uma lista de filmes</returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IFilmeRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Buscar um objeto através do seu id
+            </summary>
+            <param name="id">Id do objeto que será buscado</param>
+            <returns>Objeto que foi buscado</returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IFilmeRepository.AtualizarIdCorpo(wedapi.filmes.tarde.Domains.FilmeDomain)">
+            <summary>
+            Atualiza um filme, passando o id no corpo da requisição
+            </summary>
+            <param name="genero">Objeto filme com as novas informações</param>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IFilmeRepository.AtualizarIdUrl(System.Int32,wedapi.filmes.tarde.Domains.FilmeDomain)">
+            <summary>
+            Atualizar um filme existente passando o id pela URL da requisição
+            </summary>
+            <param name="id">Id do objeto a ser atualizado</param>
+            <param name="genero">O objeto com as novas informações</param>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IFilmeRepository.Deletar(System.Int32)">
+            <summary>
+            Deletar um filme existente
+            </summary>
+            <param name="id">GeneroId do objeto a ser deletado</param>
+        </member>
+        <member name="T:wedapi.filmes.tarde.Interfaces.IGeneroRepository">
+            <summary>
+            Interface responsável pelo repositório GeneroRepository
+            Define méotodos a serem implementados pelo repositório
+            </summary>\
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IGeneroRepository.Cadastrar(wedapi.filmes.tarde.Domains.GeneroDomain)">
+            <summary>
+            Cadastrar um novo Gênero
+            </summary>
+            <param name="novoGenero">Objeto que será cadastrado</param>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IGeneroRepository.ListarTodos">
+            <summary>
+            Retornar todos os gêneros cadastrados
+            </summary>
+            <returns>Uma lista de gêneros</returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IGeneroRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Buscar um objeto através do seu id
+            </summary>
+            <param name="id">Id do objeto que será buscado</param>
+            <returns>Objeto que foi buscado</returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IGeneroRepository.AtualizarIdUrl(System.Int32,wedapi.filmes.tarde.Domains.GeneroDomain)">
+            <summary>
+            Atualiza um gênero, passando o id no corpo da requisição
+            </summary>
+            <param name="genero">Objeto gênero com as novas informações</param>
+            <summary>
+            Atualizar um gênero existente passando o id pela URL da requisição
+            </summary>
+            <param name="id">IdGenero do objeto a ser atualizado</param>
+            <param name="genero">O objeto com as novas informações</param>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IGeneroRepository.Deletar(System.Int32)">
+            <summary>
+            Deletar um gênero existente
+            </summary>
+            <param name="id">GeneroId do objeto a ser deletado</param>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Repositories.GeneroRepository.Cadastrar(wedapi.filmes.tarde.Domains.GeneroDomain)">
+            <summary>
+            Cadastrar um novo objeto
+            </summary>
+            <param name="novoGenero">Objeto com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Repositories.GeneroRepository.ListarTodos">
+            <summary>
+            Buscar um objeto através do seu id
+            </summary>
+            <param name="id">Id do objeto que será buscado</param>
+            <returns>Objeto que foi buscado</returns>
+        </member>
+    </members>
+</doc>

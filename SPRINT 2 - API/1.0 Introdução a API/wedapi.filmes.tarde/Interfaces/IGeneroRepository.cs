@@ -32,7 +32,7 @@ namespace wedapi.filmes.tarde.Interfaces
         /// Atualiza um gênero, passando o id no corpo da requisição
         /// </summary>
         /// <param name="genero">Objeto gênero com as novas informações</param>
-        void AtualizarIdCorpo(GeneroDomain genero);
+
         /// <summary>
         /// Atualizar um gênero existente passando o id pela URL da requisição
         /// </summary>
@@ -45,5 +45,6 @@ namespace wedapi.filmes.tarde.Interfaces
         /// </summary>
         /// <param name="id">GeneroId do objeto a ser deletado</param>
         void Deletar(int id);
+        void AtualizarIdJson(GeneroDomain genero);
     }
 }
