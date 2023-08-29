@@ -54,13 +54,18 @@ namespace wedapi.filmes.tarde.Repositories
                     Leitor = cmd.ExecuteReader();
                     while (Leitor.Read())
                     {
+                        FilmeDomain filme = new FilmeDomain()
                         {
-                            FilmeBuscado.IdFilme = Convert.ToInt32(Leitor[0]);
-                            FilmeBuscado.Titulo = Convert.ToString(Leitor["Titulo"]);
-                            FilmeBuscado.IdGenero = Convert.ToInt32(Leitor[2]);
+                            IdFilme = Convert.ToInt32(Leitor[0]),
+                            Titulo = Convert.ToString(Leitor[1]),
+                            IdGenero = Convert.ToInt32(Leitor[2]),
+                            Genero = new GeneroDomain()
+                            {
+                                IdGenero = Convert.ToInt32(Leitor[2]),
+                                Nome = Convert.ToString(Leitor[3]),
+                            }
                         };
                     }
-                }
             }
             return FilmeBuscado;
         }
@@ -100,7 +105,7 @@ namespace wedapi.filmes.tarde.Repositories
 
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
-                string QuerySelect = "SELECT IdFilme,Filme,IdGenero FROM Filme";
+                string QuerySelect = "SELECT Filme.IdFilme, Filme.Titulo, Genero.IdGenero, Genero.Nome FROM Filme LEFT JOIN Genero ON Genero.IdGenero = Filme.IdGenero";
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(QuerySelect, con))
                 {
@@ -111,14 +116,19 @@ namespace wedapi.filmes.tarde.Repositories
                         FilmeDomain filme = new FilmeDomain()
                         {
                             IdFilme = Convert.ToInt32(Leitor[0]),
-                            Titulo = Convert.ToString(Leitor["Titulo"]),
+                            Titulo = Convert.ToString(Leitor[1]),
                             IdGenero = Convert.ToInt32(Leitor[2]),
+                            Genero = new GeneroDomain()
+                            {
+                                IdGenero = Convert.ToInt32(Leitor[2]),
+                                Nome = Convert.ToString(Leitor[3]),
+                            }
                         };
-                        Lista.Add(filme);
-                    }
+                    Lista.Add(filme);
                 }
             }
-            return Lista;
+        }
+        return Lista;
         }
     }
 }

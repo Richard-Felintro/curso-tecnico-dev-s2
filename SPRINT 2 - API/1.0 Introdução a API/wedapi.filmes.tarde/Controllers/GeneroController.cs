@@ -114,10 +114,15 @@ namespace wedapi.filmes.tarde.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateUrl(int id, GeneroDomain genero)
         {
+            GeneroDomain generoBuscado = _generoRepository.BuscarPorId(id);
             try
             {
-                _generoRepository.AtualizarIdUrl(id, genero);
-                return StatusCode(204);
+                if (generoBuscado != null)
+                {
+                    _generoRepository.AtualizarIdJson(genero);
+                    return StatusCode(200, genero);
+                }
+                return BadRequest();
             }
             catch (Exception erro)
             {
@@ -131,7 +136,10 @@ namespace wedapi.filmes.tarde.Controllers
         {
             try
             {
-                _generoRepository.AtualizarIdJson(genero);
+                if (genero != null)
+                {
+                    _generoRepository.AtualizarIdJson(genero);
+                }
                 return StatusCode(204);
             }
             catch (Exception erro)

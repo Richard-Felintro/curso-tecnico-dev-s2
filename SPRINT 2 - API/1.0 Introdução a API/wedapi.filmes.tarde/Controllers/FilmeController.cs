@@ -93,10 +93,15 @@ namespace wedapi.filmes.tarde.Controllers
         [HttpPatch("{id}")]
         public IActionResult PatchById(FilmeDomain Filme,int id)
         {
+            FilmeDomain filmeBuscado = _filmeRepository.BuscarPorId(id);
             try
             {
-                _filmeRepository.AtualizarIdUrl(id, Filme);
-                return Ok();
+                if (filmeBuscado != null)
+                {
+                    _filmeRepository.AtualizarIdUrl(id, filmeBuscado);
+                    return StatusCode(200, filmeBuscado);
+                }
+                return NotFound();
             }
             catch (Exception erro)
             {
