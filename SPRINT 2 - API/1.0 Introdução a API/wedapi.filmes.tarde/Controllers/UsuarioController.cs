@@ -27,7 +27,7 @@ namespace wedapi.filmes.tarde.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
-        [HttpPut]
+        [HttpPut("{email}&{senha}")]
         public IActionResult Login(string email, string senha)
         {
             try
