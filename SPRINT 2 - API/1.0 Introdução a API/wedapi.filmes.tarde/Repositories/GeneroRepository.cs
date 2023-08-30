@@ -12,11 +12,6 @@ namespace wedapi.filmes.tarde.Repositories
     {
         private string StringConexao = "Data Source = NOTE01-S15; Initial Catalog = FilmesTarde; User ID = sa; Pwd = Senai@134";
 
-        public void AtualizarIdCorpo(GeneroDomain genero)
-        {
-            throw new NotImplementedException();
-        }
-
         public void AtualizarIdJson(GeneroDomain novoGenero)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))

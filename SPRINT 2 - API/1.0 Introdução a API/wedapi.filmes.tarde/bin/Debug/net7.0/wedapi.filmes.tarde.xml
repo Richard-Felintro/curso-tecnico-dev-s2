@@ -26,6 +26,11 @@
             Instancia o _generoRepository para que haja referência aos membros do repositório
             </summary>
         </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.UsuarioController.#ctor">
+            <summary>
+            Quando o GeneroController é ativado ele já criará um repository a ser utilizado.
+            </summary>
+        </member>
         <member name="T:wedapi.filmes.tarde.Domains.FilmeDomain">
             <summary>
             Classe representante da entidade Filme
@@ -110,6 +115,18 @@
             </summary>
             <param name="id">GeneroId do objeto a ser deletado</param>
         </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IUsuarioRepository.Cadastrar(wedapi.filmes.tarde.Domains.UsuarioDomain)">
+            <summary>
+            Cadastra um novo usuário.
+            </summary>
+            <param name="NovoUsuario"></param>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Deleta um usuário existente.
+            </summary>
+            <param name="NovoUsuario"></param>
+        </member>
         <member name="M:wedapi.filmes.tarde.Repositories.GeneroRepository.Cadastrar(wedapi.filmes.tarde.Domains.GeneroDomain)">
             <summary>
             Cadastrar um novo objeto
@@ -122,6 +139,12 @@
             </summary>
             <param name="id">Id do objeto que será buscado</param>
             <returns>Objeto que foi buscado</returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Repositories.UsuarioRepository.Cadastrar(wedapi.filmes.tarde.Domains.UsuarioDomain)">
+            <summary>
+            Cadastra um novo usuário.
+            </summary>
+            <param name="NovoUsuario"></param>
         </member>
     </members>
 </doc>

@@ -39,13 +39,14 @@ namespace wedapi.filmes.tarde.Repositories
             }
         }
 
+        //public FilmeDomain BuscarPorId(int id) => ListarTodos().FirstOrDefault(filme => filme.IdFilme == id);
         public FilmeDomain BuscarPorId(int id)
         {
-            FilmeDomain FilmeBuscado = new FilmeDomain();
+            List<FilmeDomain> Lista = new List<FilmeDomain>();
 
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
-                string QuerySelect = "SELECT IdFilme,Titulo,IdGenero FROM Filme WHERE IdFilme = @id";
+                string QuerySelect = "SELECT Filme.IdFilme, Filme.Titulo, Genero.IdGenero, Genero.Nome FROM Filme LEFT JOIN Genero ON Genero.IdGenero = Filme.IdGenero WHERE IdFilme = @id";
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(QuerySelect, con))
                 {
@@ -65,25 +66,13 @@ namespace wedapi.filmes.tarde.Repositories
                                 Nome = Convert.ToString(Leitor[3]),
                             }
                         };
+                        Lista.Add(filme);
                     }
-            }
-            return FilmeBuscado;
-        }
-
-        public void Cadastrar(FilmeDomain novoFilme)
-        {
-            using (SqlConnection con = new SqlConnection(StringConexao))
-            {
-                string QueryInsert = "INSERT INTO Filme(IdGenero,Titulo) VALUES (@IdGenero,@Titulo)";
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand(QueryInsert,con))
-                {
-                    cmd.Parameters.AddWithValue("@IdGenero", novoFilme.IdGenero);
-                    cmd.Parameters.AddWithValue("@Titulo", novoFilme.Titulo);
-                    cmd.ExecuteNonQuery();
                 }
             }
+            return Lista[0];
         }
+
 
         public void Deletar(int id)
         {
@@ -124,11 +113,25 @@ namespace wedapi.filmes.tarde.Repositories
                                 Nome = Convert.ToString(Leitor[3]),
                             }
                         };
-                    Lista.Add(filme);
+                        Lista.Add(filme);
+                    }
                 }
             }
+            return Lista;
         }
-        return Lista;
+        public void Cadastrar(FilmeDomain novoFilme)
+        {
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string QueryInsert = "INSERT INTO Filme(IdGenero,Titulo) VALUES (@IdGenero,@Titulo)";
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(QueryInsert, con))
+                {
+                    cmd.Parameters.AddWithValue("@IdGenero", novoFilme.IdGenero);
+                    cmd.Parameters.AddWithValue("@Titulo", novoFilme.Titulo);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
