@@ -9,6 +9,48 @@
             Instancia o _generoRepository para que haja referência aos membros do repositório
             </summary>
         </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.FilmeController.Post(wedapi.filmes.tarde.Domains.FilmeDomain)">
+            <summary>
+            Cadastra um novo filme
+            </summary>
+            <param name="novoFilme"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.FilmeController.Delete(System.Int32)">
+            <summary>
+            Deleta um filme utilizando seu id para escolhê-lo
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.FilmeController.Get">
+            <summary>
+            Exibe todos os filmes cadastrados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.FilmeController.GetById(System.Int32)">
+            <summary>
+            Exibe um gênero utilizando seu Id como parâmetro para escolhê-lo
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.FilmeController.PatchById(wedapi.filmes.tarde.Domains.FilmeDomain,System.Int32)">
+            <summary>
+            Atualiza um gênero utilizando seu Id como parâmetro para escolhê-lo
+            </summary>
+            <param name="Filme"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.FilmeController.Patch(wedapi.filmes.tarde.Domains.FilmeDomain)">
+            <summary>
+            Atualiza um filme utilizando seu Id no Json para escolhê-lo
+            </summary>
+            <param name="Filme"></param>
+            <returns></returns>
+        </member>
         <member name="T:wedapi.filmes.tarde.Controllers.GeneroController">
             <summary>
             Define que a rota de uma requisição será no seguinte formato
@@ -26,10 +68,60 @@
             Instancia o _generoRepository para que haja referência aos membros do repositório
             </summary>
         </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.GeneroController.Post(wedapi.filmes.tarde.Domains.GeneroDomain)">
+            <summary>
+            Cadastra um novo gênero
+            </summary>
+            <param name="novoGenero"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.GeneroController.Delete(System.Int32)">
+            <summary>
+            Deleta um gênero utilizando seu id para escolhê-lo
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.GeneroController.Get">
+            <summary>
+            Exibe todos os gêneros cadastrados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.GeneroController.GetById(System.Int32)">
+            <summary>
+            Exibe um gênero utilizando seu id para escolhê-lo
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.GeneroController.UpdateUrl(System.Int32,wedapi.filmes.tarde.Domains.GeneroDomain)">
+            <summary>
+            Atualiza um gênero utilizando seu Id como parâmetro para escolhê-lo
+            </summary>
+            <param name="id"></param>
+            <param name="genero"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.GeneroController.UpdateJson(wedapi.filmes.tarde.Domains.GeneroDomain)">
+            <summary>
+            Atualiza um gênero utilizando seu Id no Json para escolhê-lo
+            </summary>
+            <param name="genero"></param>
+            <returns></returns>
+        </member>
         <member name="M:wedapi.filmes.tarde.Controllers.UsuarioController.#ctor">
             <summary>
             Quando o GeneroController é ativado ele já criará um repository a ser utilizado.
             </summary>
+        </member>
+        <member name="M:wedapi.filmes.tarde.Controllers.UsuarioController.Login(System.String,System.String)">
+            <summary>
+            Faz login a um usuário, utilizando seu email e senha como parametros.
+            </summary>
+            <param name="email"></param>
+            <param name="senha"></param>
+            <returns></returns>
         </member>
         <member name="T:wedapi.filmes.tarde.Domains.FilmeDomain">
             <summary>

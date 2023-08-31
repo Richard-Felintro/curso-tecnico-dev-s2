@@ -27,12 +27,22 @@ namespace wedapi.filmes.tarde.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Faz login a um usuário, utilizando seu email e senha como parametros.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
         [HttpPut("{email}&{senha}")]
         public IActionResult Login(string email, string senha)
         {
             try
             {
                 UsuarioDomain usuario = _usuarioRepository.Login(email, senha);
+                if (usuario == null)
+                {
+                    return NotFound("Usuário não encontrado. Senha ou email inválidos.");
+                }
                 return Ok(usuario);
             }
             catch (Exception erro)

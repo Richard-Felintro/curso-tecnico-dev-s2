@@ -20,6 +20,11 @@ namespace wedapi.filmes.tarde.Controllers
             _filmeRepository = new FilmeRepository();
         }
 
+        /// <summary>
+        /// Cadastra um novo filme
+        /// </summary>
+        /// <param name="novoFilme"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(FilmeDomain novoFilme)
         {
@@ -35,6 +40,11 @@ namespace wedapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Deleta um filme utilizando seu id para escolhê-lo
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -48,10 +58,14 @@ namespace wedapi.filmes.tarde.Controllers
             catch (Exception erro)
             {
 
-                return BadRequest(erro.Message);
+                return NotFound(erro.Message);
             }
         }
 
+        /// <summary>
+        /// Exibe todos os filmes cadastrados
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -69,6 +83,11 @@ namespace wedapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Exibe um gênero utilizando seu Id como parâmetro para escolhê-lo
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -86,10 +105,16 @@ namespace wedapi.filmes.tarde.Controllers
             catch (Exception erro)
             {
                 // Retorna um status code 400 BadRequest e a mensagem de erro
-                return BadRequest(erro.Message);
+                return NotFound(erro.Message);
             }
         }
 
+        /// <summary>
+        /// Atualiza um gênero utilizando seu Id como parâmetro para escolhê-lo
+        /// </summary>
+        /// <param name="Filme"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPatch("{id}")]
         public IActionResult PatchById(FilmeDomain Filme,int id)
         {
@@ -109,19 +134,28 @@ namespace wedapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza um filme utilizando seu Id no Json para escolhê-lo
+        /// </summary>
+        /// <param name="Filme"></param>
+        /// <returns></returns>
         [HttpPatch]
         public IActionResult Patch(FilmeDomain Filme)
         {
+            FilmeDomain filmeBuscado = _filmeRepository.BuscarPorId(Filme.IdFilme);
             try
             {
-                _filmeRepository.AtualizarIdCorpo(Filme);
-                return Ok();
+                if (filmeBuscado != null)
+                {
+                    _filmeRepository.AtualizarIdCorpo(Filme);
+                    return StatusCode(200, filmeBuscado);
+                }
+                return NotFound();
             }
             catch (Exception erro)
             {
                 return BadRequest(erro.Message);
             }
         }
-
     }
 }

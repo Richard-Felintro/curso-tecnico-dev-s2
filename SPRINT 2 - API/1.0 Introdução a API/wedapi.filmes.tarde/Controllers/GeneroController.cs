@@ -39,6 +39,11 @@ namespace wedapi.filmes.tarde.Controllers
             _generoRepository = new GeneroRepository();
         }
 
+        /// <summary>
+        /// Cadastra um novo gênero
+        /// </summary>
+        /// <param name="novoGenero"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(GeneroDomain novoGenero)
         {
@@ -56,6 +61,11 @@ namespace wedapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Deleta um gênero utilizando seu id para escolhê-lo
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id) 
         {
@@ -73,6 +83,10 @@ namespace wedapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Exibe todos os gêneros cadastrados
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -91,6 +105,11 @@ namespace wedapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Exibe um gênero utilizando seu id para escolhê-lo
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -111,6 +130,12 @@ namespace wedapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza um gênero utilizando seu Id como parâmetro para escolhê-lo
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="genero"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult UpdateUrl(int id, GeneroDomain genero)
         {
@@ -131,6 +156,11 @@ namespace wedapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza um gênero utilizando seu Id no Json para escolhê-lo
+        /// </summary>
+        /// <param name="genero"></param>
+        /// <returns></returns>
         [HttpPut]
         public IActionResult UpdateJson(GeneroDomain genero)
         {
