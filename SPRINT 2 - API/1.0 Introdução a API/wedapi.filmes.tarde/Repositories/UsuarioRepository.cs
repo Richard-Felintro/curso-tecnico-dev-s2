@@ -35,7 +35,7 @@ namespace wedapi.filmes.tarde.Repositories
             }
         }
 
-        public UsuarioDomain Login(string email, string senha)
+        public UsuarioDomain Login(UsuarioDomain usuario)
         {
             // Cria conexão com o StringConexao.
             using (SqlConnection con = new SqlConnection(StringConexao))
@@ -46,8 +46,8 @@ namespace wedapi.filmes.tarde.Repositories
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(QueryLogin, con))
                 {
-                    cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@senha", senha);
+                    cmd.Parameters.AddWithValue("@email", usuario.Email);
+                    cmd.Parameters.AddWithValue("@senha", usuario.Senha);
                     SqlDataReader Leitor;
                     Leitor = cmd.ExecuteReader();
                     while (Leitor.Read())
@@ -57,7 +57,6 @@ namespace wedapi.filmes.tarde.Repositories
                             IdUsuario = Convert.ToInt32(Leitor[0]),
                             UserName = Convert.ToString(Leitor[1]),
                             Email = Convert.ToString(Leitor[2]),
-                            Senha = Convert.ToString(Leitor[3]),
                             PermissaoAdmin = (bool)Leitor[4]
                         };
                         return userLogin;

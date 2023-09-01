@@ -3,8 +3,19 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Adiciona o serviço de Controllers
+// Adiciona o serviço de Controllers
 builder.Services.AddControllers();
+
+// Adiciona serviço de autenticação JWT Bearer
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultChallengeScheme = "JwtBearer";
+    options.DefaultAuthenticateScheme = "JwtBearer";
+})
+
+// Define os parametros de validação do token
+.AddJwtBearer(options => { });
+
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -17,7 +28,7 @@ builder.Services.AddSwaggerGen(options =>
         Contact = new OpenApiContact
         {
             Name = "Richard Felintro da Silva",
-            Url = new Uri("https://example.com/contact")
+            Url = new Uri("https://github.com/Richard-Felintro")
         },
         License = new OpenApiLicense
         {

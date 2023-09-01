@@ -15,6 +15,6 @@ namespace wedapi.filmes.tarde.Interfaces
         /// Deleta um usuário existente.
         /// </summary>
         /// <param name="NovoUsuario"></param>
-        UsuarioDomain Login (string email, string senha);
+        UsuarioDomain Login (UsuarioDomain usuario);
     }
 }

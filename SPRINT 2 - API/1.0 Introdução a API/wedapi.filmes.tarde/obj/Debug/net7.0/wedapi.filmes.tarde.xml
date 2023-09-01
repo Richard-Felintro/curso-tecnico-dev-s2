@@ -115,7 +115,7 @@
             Quando o GeneroController é ativado ele já criará um repository a ser utilizado.
             </summary>
         </member>
-        <member name="M:wedapi.filmes.tarde.Controllers.UsuarioController.Login(System.String,System.String)">
+        <member name="M:wedapi.filmes.tarde.Controllers.UsuarioController.Login(wedapi.filmes.tarde.Domains.UsuarioDomain)">
             <summary>
             Faz login a um usuário, utilizando seu email e senha como parametros.
             </summary>
@@ -213,7 +213,7 @@
             </summary>
             <param name="NovoUsuario"></param>
         </member>
-        <member name="M:wedapi.filmes.tarde.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+        <member name="M:wedapi.filmes.tarde.Interfaces.IUsuarioRepository.Login(wedapi.filmes.tarde.Domains.UsuarioDomain)">
             <summary>
             Deleta um usuário existente.
             </summary>
