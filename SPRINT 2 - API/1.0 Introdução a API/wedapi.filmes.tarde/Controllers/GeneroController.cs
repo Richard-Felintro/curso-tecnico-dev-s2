@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Resources;
 using wedapi.filmes.tarde.Domains;
@@ -8,6 +9,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace wedapi.filmes.tarde.Controllers
 {
+    [Authorize]
     /// <summary>
     /// Define que a rota de uma requisição será no seguinte formato
     /// dominio/api/nomeController
@@ -88,6 +90,7 @@ namespace wedapi.filmes.tarde.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        // Precisa estar logado para acessar a rota 
         public IActionResult Get()
         {
             try
