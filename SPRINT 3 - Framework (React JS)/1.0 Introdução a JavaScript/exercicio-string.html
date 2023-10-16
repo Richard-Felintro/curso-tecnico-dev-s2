@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercício Nome</h1>
+    <form onsubmit="saudar()">
+        <label for="">Nome</label>
+        <input type="text" id="nome" placeholder="Insira seu nome aqui">
+        <br>
+        <label for="">Apelido</label>
+        <input type="text" id="apelido" placeholder="Insira seu apelido aqui">
+        <br>
+        <button>Rodar</button> <strong id="msg"></strong>
+    </form>
+
+    <script>
+        function saudar() {
+            event.preventDefault()
+            let nome = document.getElementById("nome").value
+            let apelido = document.getElementById("apelido").value
+            document.getElementById("msg").innerHTML = `Olá, ${nome.replace(nome,apelido)}`
+        }
+    </script>
+</body>
+</html>
