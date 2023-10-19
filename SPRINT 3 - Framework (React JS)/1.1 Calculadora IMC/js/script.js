@@ -19,6 +19,7 @@ function calcular(e) {
   // Determina a classificação de seu IMC
   let classificacao = gerarClassificacao(imc);
 
+  let data = new Date()
   // Adiciona os dados cadastrados a um objeto
   let pessoa = {
     nome: nome,
@@ -26,18 +27,44 @@ function calcular(e) {
     peso: peso,
     imc: imc,
     classificacao: classificacao,
+    dataCadastro: `${data.getHours()}:${data.getMinutes()} ${data.getDate()}/${
+      data.getMonth() + 1
+    }/${data.getFullYear()}`,
   };
 
   // Adiciona o objeto a lista de objetos
   pessoas.push(pessoa);
 
+  document.getElementById("corpo-tabela").innerHTML += `
+  <tr>
+      <td data-cell="nome">${pessoa.nome}</td>
+      <td data-cell="altura">${pessoa.altura}</td>
+      <td data-cell="peso">${pessoa.peso}</td>
+      <td data-cell="valor do imc">${pessoa.imc}</td>
+      <td data-cell="classificação do imc">${pessoa.classificacao}</td>
+      <td data-cell="data de cadastro">${pessoa.dataCadastro}</td>
+  </tr>
+  `;
   //* TESTE
-  console.log(pessoas);
+  pessoas.forEach(p => {
+    console.log(p);
+  });
+}
+
+function limparFormulario(){
+  document.getElementById("nome").value = ""
+  document.getElementById("altura").value = ""
+  document.getElementById("peso").value = ""
+}
+
+function deletarRegistros(){
+  let pessoas = []
+  document.getElementById("corpo-tabela").innerHTML = ""
 }
 
 // Calculo do IMC
 function calcularImc(peso, altura) {
-  return (peso / (altura ** 2)).toFixed(1);
+  return (peso / altura ** 2).toFixed(1);
 }
 
 // Determina a classificação de seu IMC
