@@ -1,0 +1,14 @@
+{
+  "contatos": [
+    {
+      "nome": "Richard Felintro",
+      "telefone": "11 93942-5687",
+      "cep": "09380320",
+      "endereco": "Rua Zequinha de Abreu, 252",
+      "bairro": "Jardim Sônia Maria",
+      "cidade": "Mauá",
+      "estado": "SP",
+      "id": 2
+    }
+  ]
+}
