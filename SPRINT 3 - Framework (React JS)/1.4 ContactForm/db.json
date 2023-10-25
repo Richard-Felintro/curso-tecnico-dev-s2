@@ -1,0 +1,21 @@
+{
+  "contatos": [
+    {
+      "nome": "Fulano",
+      "sobrenome": "da Silva",
+      "email": "fulano@gmail.com",
+      "pais": "55",
+      "ddd": "11",
+      "telefone": "123456789",
+      "cep": "01001000",
+      "rua": "Praça da Sé",
+      "numero": "666",
+      "complemento": "lado ímpar",
+      "bairro": "Sé",
+      "cidade": "São Paulo",
+      "UF": "SP",
+      "anotacoes": "Eu vivo!",
+      "id": 1
+    }
+  ]
+}
